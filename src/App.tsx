@@ -27,18 +27,18 @@ const highlights = [
 const galleryImages = [
   {
     title: 'Deep muscle relief',
-    description: 'Focused therapeutic work to ease tension and restore comfort throughout your body.',
-    image: 'https://images.unsplash.com/photo-1532731437621-65a54327b741?auto=format&fit=crop&w=900&q=80',
+    description: 'A male therapist uses focused therapeutic techniques to ease tension and restore comfort.',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Healing touch therapy',
-    description: 'Professional hands-on techniques designed to melt away stress and promote deep relaxation.',
-    image: 'https://images.unsplash.com/photo-1600334089648-b0b4c612b08d?auto=format&fit=crop&w=900&q=80',
+    description: 'Professional hands-on care from a male therapist helps a female client settle into deep relaxation.',
+    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Restorative wellness',
-    description: 'Personalized treatment supporting recovery, muscle release, and complete renewal.',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80',
+    description: 'Personalized massage supports recovery, muscle release, and complete renewal for women.',
+    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80',
   },
 ]
 
@@ -57,20 +57,13 @@ function App() {
   return (
     <div className="page-shell">
       <header className="topbar">
-        <div className="brand-wrap">
-          <div className="brand-mark">
-            <img src="/th-logo.png" alt="Tropical Hands" />
-          </div>
-          <span className="brand-name">Tropical Hands</span>
-        </div>
-
         <nav className={`nav ${isMenuOpen ? 'is-open' : ''}`} id="primary-nav" aria-label="Main navigation" aria-expanded={isMenuOpen}>
           {navItems.map((item) => (
             <a key={item.href} href={item.href} onClick={closeMenu}>{item.label}</a>
           ))}
         </nav>
 
-        <button className="nav-button" type="button">Shop now</button>
+        <button className="nav-button" type="button">Book now</button>
 
         <button
           className="mobile-menu-toggle"
@@ -113,12 +106,12 @@ function App() {
           <div className="hero-visual" aria-label="Woman receiving massage from a male therapist">
             <div className="photo-visual">
               <img
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
-                alt="Woman receiving a calming massage from a trained male therapist in a serene spa setting."
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85"
+                alt="Female client receiving focused therapeutic massage from a male therapist."
               />
               <div className="floating-badge">
                 <span>Women-only care</span>
-                <strong>Therapeutic massage</strong>
+                <strong>Hotel and Home visits</strong>
               </div>
             </div>
           </div>

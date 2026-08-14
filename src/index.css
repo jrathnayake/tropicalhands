@@ -76,37 +76,6 @@ img {
   backdrop-filter: blur(10px);
 }
 
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--sun), #f6d9a7);
-  color: var(--cocoa);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.brand-mark img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-
-
-.brand-name {
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  font-size: 1rem;
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -185,7 +154,15 @@ img {
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 48px;
-  padding: 72px 20px 20px;
+  padding: 44px 20px 20px;
+}
+
+.hero-copy {
+  grid-column: 1;
+}
+
+.hero-visual {
+  grid-column: 2;
 }
 
 .eyebrow {
@@ -679,8 +656,9 @@ img {
   }
 
   .hero {
-    padding: 42px 8px 12px;
+    padding: 40px 8px 12px;
     gap: 28px;
+    grid-template-columns: 1fr;
   }
 
   .photo-visual img {
