@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const features = [
   {
     title: 'Botanical blends',
@@ -22,32 +24,75 @@ const highlights = [
   { value: '12k+', label: 'hands cared for this year' },
 ]
 
+const galleryImages = [
+  {
+    title: 'Deep muscle relief',
+    description: 'Focused therapeutic work to ease tension and restore comfort throughout your body.',
+    image: 'https://images.unsplash.com/photo-1532731437621-65a54327b741?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'Healing touch therapy',
+    description: 'Professional hands-on techniques designed to melt away stress and promote deep relaxation.',
+    image: 'https://images.unsplash.com/photo-1600334089648-b0b4c612b08d?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'Restorative wellness',
+    description: 'Personalized treatment supporting recovery, muscle release, and complete renewal.',
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80',
+  },
+]
+
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const navItems = [
+    { label: 'Story', href: '#story' },
+    { label: 'Rituals', href: '#rituals' },
+    { label: 'Reviews', href: '#reviews' },
+    { label: 'Shop', href: '#shop' },
+  ]
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <div className="page-shell">
       <header className="topbar">
         <div className="brand-wrap">
-          <div className="brand-mark">TH</div>
+          <div className="brand-mark">
+            <img src="/th-logo.png" alt="Tropical Hands" />
+          </div>
           <span className="brand-name">Tropical Hands</span>
         </div>
 
-        <nav className="nav" aria-label="Main navigation">
-          <a href="#story">Story</a>
-          <a href="#rituals">Rituals</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#shop">Shop</a>
+        <nav className={`nav ${isMenuOpen ? 'is-open' : ''}`} id="primary-nav" aria-label="Main navigation" aria-expanded={isMenuOpen}>
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} onClick={closeMenu}>{item.label}</a>
+          ))}
         </nav>
 
         <button className="nav-button" type="button">Shop now</button>
+
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-controls="primary-nav"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </header>
 
       <main>
         <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">Hand care, reimagined</p>
-            <h1>Soft, strong, and beautifully restored.</h1>
+            <h1>Professional, Therapeutic Massage, for Women.</h1>
             <p className="lede">
-              Tropical Hands brings together island-inspired botanicals and restorative rituals to give your hands the daily care they deserve.
+              Tropical Hands provides professional, restorative massage therapy exclusively for women, combining expert therapeutic techniques with a calming tropical-inspired experience to help you relax, recover, and feel your best.
             </p>
 
             <div className="cta-row">
@@ -65,17 +110,15 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Tropical hand care product display">
-            <div className="product-card">
-              <div className="product-glow" />
-              <div className="jar">
-                <div className="lid" />
-                <div className="cream" />
-              </div>
-              <div className="product-details">
-                <p>Signature ritual</p>
-                <h2>Coconut Renewal</h2>
-                <span>$28</span>
+          <div className="hero-visual" aria-label="Woman receiving massage from a male therapist">
+            <div className="photo-visual">
+              <img
+                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+                alt="Woman receiving a calming massage from a trained male therapist in a serene spa setting."
+              />
+              <div className="floating-badge">
+                <span>Women-only care</span>
+                <strong>Therapeutic massage</strong>
               </div>
             </div>
           </div>
@@ -102,6 +145,25 @@ function App() {
                 <div className="feature-icon" aria-hidden="true">{feature.icon}</div>
                 <h3>{feature.title}</h3>
                 <p>{feature.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="image-gallery" aria-label="Massage therapy gallery">
+          <div className="section-heading">
+            <p className="eyebrow">A restorative experience</p>
+            <h2>Comfort, privacy, and hands-on care.</h2>
+          </div>
+
+          <div className="gallery-grid">
+            {galleryImages.map((item) => (
+              <article key={item.title} className="gallery-card">
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <div className="gallery-copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -168,6 +230,41 @@ function App() {
             <h2>Bring the tropical ritual home.</h2>
           </div>
           <button className="primary" type="button">Browse the collection</button>
+        </section>
+
+        <section id="contact" className="booking-contact" aria-label="Book a massage or contact via WhatsApp">
+          <div className="booking-copy">
+            <p className="eyebrow">Book your session</p>
+            <h2>Reserve a calming massage experience for women.</h2>
+            <p>
+              Choose a treatment that supports stress relief, muscle recovery, and deep relaxation in a private, welcoming setting.
+            </p>
+          </div>
+
+          <div className="booking-panel">
+            <div className="booking-meta">
+              <span>Mon–Sun</span>
+              <strong>9:00 AM – 10:00 PM</strong>
+            </div>
+            <div className="booking-meta">
+              <span>Call or WhatsApp</span>
+              <strong>+94 72 62 62 000</strong>
+            </div>
+
+            <div className="booking-actions">
+              <a
+                className="primary booking-button"
+                href="https://wa.me/94771234567?text=Hi%20Tropical%20Hands%2C%20I%27d%20like%20to%20book%20a%20massage%20session."
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp us
+              </a>
+              <a className="secondary booking-button" href="tel:+94771234567">
+                Call to book
+              </a>
+            </div>
+          </div>
         </section>
       </main>
 
