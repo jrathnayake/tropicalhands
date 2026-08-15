@@ -127,6 +127,9 @@ img {
 }
 
 .nav-button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   padding: 0.8rem 1.2rem;
   font-weight: 600;
 }
@@ -168,8 +171,8 @@ img {
 .eyebrow {
   margin: 0 0 18px;
   color: var(--leaf);
-  letter-spacing: 0.18em;
-  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
@@ -258,14 +261,13 @@ img {
   gap: 4px;
   padding: 14px 16px;
   border-radius: 18px;
-  background: rgba(24, 18, 13, 0.68);
-  backdrop-filter: blur(8px);
+  background: #000;
   color: white;
   box-shadow: 0 18px 32px rgba(27, 21, 18, 0.2);
 }
 
 .floating-badge span {
-  font-size: 0.66rem;
+  font-size: 0.78rem;
   letter-spacing: 0.12em;
   opacity: 0.8;
 }
@@ -273,6 +275,13 @@ img {
 .floating-badge strong {
   font-size: 1.2rem;
   letter-spacing: -0.04em;
+}
+
+.floating-badge-title {
+  color: #fff;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem) !important;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .stats,

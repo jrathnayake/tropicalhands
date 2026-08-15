@@ -2,26 +2,26 @@ import { useState } from 'react'
 
 const features = [
   {
-    title: 'Botanical blends',
-    text: 'Cold-pressed oils and plant butters chosen to nourish, soften, and protect daily wear.',
+    title: 'Women Only',
+    text: 'A private wellness experience created exclusively for women...',
     icon: '✦',
   },
   {
-    title: 'Daily rituals',
-    text: 'Simple routines for work, travel, and recovery—designed for hands that never stop moving.',
+    title: 'Tailored Sessions',
+    text: 'Every massage is adapted to your comfort, needs, and areas of tension...',
     icon: '❋',
   },
   {
-    title: 'Clean ingredients',
-    text: 'No harsh fillers, no synthetic shortcuts—just intentional care with a tropical sensibility.',
+    title: 'Professional & Discreet',
+    text: 'Your comfort, privacy, and boundaries always come first...',
     icon: '✧',
   },
 ]
 
 const highlights = [
-  { value: '98%', label: 'natural-origin ingredients' },
-  { value: '4.9/5', label: 'average customer rating' },
-  { value: '12k+', label: 'hands cared for this year' },
+  { value: 'Respectful', label: 'Your comfort and boundaries are always respected....' },
+  { value: 'Professional', label: 'Sessions are delivered with care and professionalism...' },
+  { value: 'Private', label: 'Your personal space and experience are treated with discretion...' },
 ]
 
 const galleryImages = [
@@ -63,7 +63,14 @@ function App() {
           ))}
         </nav>
 
-        <button className="nav-button" type="button">Book now</button>
+        <a
+          className="nav-button"
+          href="https://wa.me/94771234567?text=Hi%20Tropical%20Hands%2C%20I%27d%20like%20to%20book%20a%20massage%20session."
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book Now
+        </a>
 
         <button
           className="mobile-menu-toggle"
@@ -83,15 +90,13 @@ function App() {
         <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">Hand care, reimagined</p>
-            <h1>Professional, Therapeutic Massage, for Women.</h1>
+            <h1>Professional, Therapeutic Massage, <u><b>ONLY</b></u> for <b><u>Women</u></b>.</h1>
             <p className="lede">
-              Tropical Hands provides professional, restorative massage therapy exclusively for women, combining expert therapeutic techniques with a calming tropical-inspired experience to help you relax, recover, and feel your best.
+              Tropical Hands provides professional, restorative massage therapy <b><u>exclusively for women</u></b>, combining expert therapeutic techniques with a calming tropical-inspired experience to help you relax, recover, and feel your best.
             </p>
-
-            <div className="cta-row">
-              <button className="primary" type="button">Shop essentials</button>
-              <button className="secondary" type="button">Learn our story</button>
-            </div>
+            <p className="lede">
+              At Tropical Hands, every session is created around your comfort, privacy, and wellbeing. We provide professional massage therapy <b><u>exclusively for women</u></b>, with a focus on relaxation, therapeutic care, and restoring balance to body and mind.
+            </p>
 
             <div className="mini-trust">
               <span>Trusted by wellness lovers</span>
@@ -110,8 +115,8 @@ function App() {
                 alt="Female client receiving focused therapeutic massage from a male therapist."
               />
               <div className="floating-badge">
-                <span>Women-only care</span>
-                <strong>Hotel and Home visits</strong>
+                <span><strong>Women-only care</strong></span>
+                <strong className="floating-badge-title">Hotel and Home visits</strong>
               </div>
             </div>
           </div>
@@ -129,7 +134,7 @@ function App() {
         <section id="rituals" className="features">
           <div className="section-heading">
             <p className="eyebrow">Why it works</p>
-            <h2>Simple ingredients. Deep hydration.</h2>
+            <h2>Professional Care... Personal Attention...</h2>
           </div>
 
           <div className="feature-grid">
